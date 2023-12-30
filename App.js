@@ -1,22 +1,17 @@
-/**
- * Create nested structures
- * <div id="parent">
- *  <div id="child">
- *      <h1>This is h1</h1>
- *      <h2>This is h2</h2>
- *  </div>
- * </div>
- */
 import React from "react";
 import ReactDOM  from "react-dom/client";
 
-const parent = React.createElement("div", {id: "parent"}, 
-    React.createElement("div", {id: "child"}, 
-        [React.createElement("h1", {}, "This is h1"), React.createElement("h2", {}, "This is h2")] )
+const Title = () => (
+    <h1>This is title</h1>
 );
 
+//functional component
+const JsxHeading = () =>  (<h1 id="heading">
+    <Title />
+    This is heading
+</h1>);
 
 const rootEle = document.getElementById("root")
 const root = ReactDOM.createRoot(rootEle);
 
-root.render(parent); 
+root.render(<JsxHeading />); 
