@@ -1,48 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import image from "./assets/images/logo.jpg";
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img className="logo" src={image} altname="Logo-food-delivery" />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li className="nav-item">Home</li>
-          <li className="nav-item">About Us</li>
-          <li className="nav-item">Contact Us</li>
-          <li className="nav-item">Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const ResCard = (props) => {
-  const { name, cloudinaryImageId, costForTwo, cuisines, avgRating, sla } =
-    props.restaurant.info;
-
-  return (
-    <div className="res-card">
-      <img
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
-        altname={cloudinaryImageId}
-      />
-      <h3 className="food-name">{name}</h3>
-      <h4 className="res-card-utils">
-        {avgRating} Stars | {sla.slaString}
-      </h4>
-      <h4>{costForTwo}</h4>
-      <h4 className="cuisines">{cuisines.join(",")}</h4>
-    </div>
-  );
-};
-
 const resList = {
   restaurants: [
     {
@@ -274,14 +229,7 @@ const resList = {
         locality: "Budh Marg",
         areaName: "Lodipur",
         costForTwo: "₹700 for two",
-        cuisines: [
-          "Pizzas",
-          "Pastas",
-          "Italian",
-          "Bakery",
-          "Beverages",
-          "Continental",
-        ],
+        cuisines: ["Pizzas", "Pastas", "Italian", "Bakery"],
         avgRating: 4.3,
         parentId: "18644",
         avgRatingString: "4.3",
@@ -931,31 +879,4 @@ const resList = {
   ],
 };
 
-const Body = () => {
-  const { restaurants } = resList;
-
-  return (
-    <div className="res-body">
-      <div className="search">search</div>
-      <div className="res-card-container">
-        {restaurants.map((restaurant) => (
-          <ResCard key={restaurant.info.id} restaurant={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const App = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const rootEle = document.getElementById("root");
-const root = ReactDOM.createRoot(rootEle);
-
-root.render(<App />);
+export default resList;
