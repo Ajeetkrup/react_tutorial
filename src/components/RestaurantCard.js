@@ -3,6 +3,10 @@ import { CDN_URL } from "../utils/constants";
 const RestaurantCard = (props) => {
   const { name, cloudinaryImageId, costForTwo, cuisines, avgRating, sla } =
     props.restaurant.info;
+  let trimmedCuisines = [];
+  for (let i = 0; i < 4 && i < cuisines.length; i++) {
+    trimmedCuisines.push(cuisines[i]);
+  }
 
   return (
     <div className="res-card">
@@ -12,7 +16,7 @@ const RestaurantCard = (props) => {
         {avgRating || "Not Have"} Stars | {sla.slaString}
       </h4>
       <h4>{costForTwo}</h4>
-      <h4 className="cuisines">{cuisines.join(",")}</h4>
+      <h4 className="cuisines">{trimmedCuisines.join(",")}</h4>
     </div>
   );
 };
