@@ -94,3 +94,11 @@ h4 {
   border: 1px solid transparent;
   border-radius: 3px;
 }
+
+.search {
+  display: flex;
+}
+
+.search > .search-bar {
+  margin: 1rem;
+}

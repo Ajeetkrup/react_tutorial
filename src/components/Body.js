@@ -4,6 +4,8 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  const [LOR, setLOR] = useState([]);
 
   useEffect(() => {
     fetchRestaurants();
@@ -18,7 +20,10 @@ const Body = () => {
     console.log(json);
 
     setListOfRestaurants(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setLOR(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -29,6 +34,30 @@ const Body = () => {
   return (
     <div className="res-body">
       <div className="search">
+        <div className="search-bar">
+          <input
+            className="search-inp"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          ></input>
+          <button
+            className="search-btn"
+            onClick={() => {
+              console.log(searchText);
+
+              const filteredRestaurants = LOR.filter((restaurant) => {
+                return restaurant?.info?.name
+                  .toLowerCase()
+                  .includes(searchText.toLowerCase());
+              });
+              setListOfRestaurants(filteredRestaurants);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           className="top-rated-btn"
           onClick={() => {
