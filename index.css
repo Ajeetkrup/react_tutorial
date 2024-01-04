@@ -102,3 +102,14 @@ h4 {
 .search > .search-bar {
   margin: 1rem;
 }
+
+.container {
+  background: aquamarine;
+  padding: 2rem;
+  text-align: center;
+  height: 100vh;
+}
+
+.err-img {
+  width: 30%;
+}

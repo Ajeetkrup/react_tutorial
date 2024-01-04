@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import image from "../../assets/images/logo.jpg";
 
 export const Header = () => {
@@ -11,9 +12,15 @@ export const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
-          <li className="nav-item">Home</li>
-          <li className="nav-item">About Us</li>
-          <li className="nav-item">Contact Us</li>
+          <li className="nav-item">
+            <Link to="/">Home</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/about">About Us</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/contact">Contact Us</Link>
+          </li>
           <li className="nav-item">Cart</li>
           <li className="nav-item">
             <button
