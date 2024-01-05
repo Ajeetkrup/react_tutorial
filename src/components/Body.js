@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -20,10 +21,10 @@ const Body = () => {
     console.log(json);
 
     setListOfRestaurants(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setLOR(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -73,7 +74,12 @@ const Body = () => {
       </div>
       <div className="res-card-container">
         {listOfRestaurants?.map((restaurant) => (
-          <RestaurantCard key={restaurant?.info?.id} restaurant={restaurant} />
+          <Link to={"/restaurant/" + restaurant?.info?.id}>
+            <RestaurantCard
+              key={restaurant?.info?.id}
+              restaurant={restaurant}
+            />
+          </Link>
         ))}
       </div>
     </div>

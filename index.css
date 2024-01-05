@@ -3,6 +3,11 @@
   margin: 0px;
 }
 
+a {
+  text-decoration: none;
+  color: #000;
+}
+
 .app {
   margin: 10px;
 }
@@ -45,8 +50,8 @@
 
 .res-card:hover {
   cursor: pointer;
-  width: 242px;
-  height: 28%;
+  border: 4px solid rgba(0, 0, 0, 0.295);
+  border-radius: 22px;
 }
 
 .res-card > img {
@@ -112,4 +117,43 @@ h4 {
 
 .err-img {
   width: 30%;
+}
+
+.res-details {
+  padding: 4rem;
+  width: 50%;
+  margin: auto;
+}
+
+.res-info {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px dashed gray;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.45rem;
+}
+
+.res-info-detailed > ul {
+  list-style-type: none;
+}
+
+.res-info-detailed > ul {
+  color: gray;
+}
+
+.res-info-detailed > ul > .res-title {
+  color: black;
+  font-weight: 600;
+}
+
+.ratings {
+  border: 0.5px solid gray;
+  border-radius: 6px;
+  padding: 14px;
+}
+
+.ratings > .stars {
+  color: green;
+  font-weight: 400;
+  border-bottom: 0.3px solid gray;
 }
