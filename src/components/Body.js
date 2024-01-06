@@ -74,11 +74,11 @@ const Body = () => {
       </div>
       <div className="res-card-container">
         {listOfRestaurants?.map((restaurant) => (
-          <Link to={"/restaurant/" + restaurant?.info?.id}>
-            <RestaurantCard
-              key={restaurant?.info?.id}
-              restaurant={restaurant}
-            />
+          <Link
+            key={restaurant?.info?.id}
+            to={"/restaurant/" + restaurant?.info?.id}
+          >
+            <RestaurantCard restaurant={restaurant} />
           </Link>
         ))}
       </div>

@@ -50,8 +50,7 @@ a {
 
 .res-card:hover {
   cursor: pointer;
-  border: 4px solid rgba(0, 0, 0, 0.295);
-  border-radius: 22px;
+  border: 4px solid transparent;
 }
 
 .res-card > img {
@@ -72,6 +71,20 @@ h4 {
 .shimmer-container {
   display: flex;
   flex-wrap: wrap;
+}
+
+.shim-res-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shim-res-info > .shim-res-menu {
+  background-color: #808080;
+  width: 59rem;
+  height: 132px;
+  border-radius: 18px;
+  margin: 1rem auto;
+  animation: skeleton-loading 1s linear infinite alternate;
 }
 
 .shimmer-card {
@@ -156,4 +169,76 @@ h4 {
   color: green;
   font-weight: 400;
   border-bottom: 0.3px solid gray;
+}
+
+.ratings > .rat-no {
+  font-size: 10px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  margin-top: 0.86rem;
+}
+
+.menu-info {
+  padding-top: 15px;
+  margin-left: 2.3rem;
+}
+
+.veg-icon {
+  color: green;
+}
+
+.non-veg-icon {
+  color: red;
+}
+
+.menu-name {
+  font-weight: 600;
+}
+
+.menu-desc {
+  color: gray;
+}
+
+.menu-img {
+  cursor: pointer;
+}
+
+.menu-img > img {
+  width: 88px;
+  border-radius: 9px;
+}
+
+.menu-img > button {
+  position: relative;
+  color: green;
+  background-color: #fff;
+  border: 1px solid gray;
+  border-radius: 7px;
+  padding: 5px;
+  right: 67px;
+  cursor: pointer;
+}
+
+.menu-img > button > .btn-text {
+  margin-right: 4px;
+}
+
+.res-menu > ul {
+  list-style-type: none;
+}
+
+.menu-card-info {
+  margin-top: 0.5rem;
+  margin-bottom: 0.7rem;
+  border-bottom: 0.5rem solid gray;
+}
+
+.menu-card-info > .title {
+  font-weight: 600;
 }
