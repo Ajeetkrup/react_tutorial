@@ -242,3 +242,9 @@ h4 {
 .menu-card-info > .title {
   font-weight: 600;
 }
+
+.user-info {
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 5px;
+}
