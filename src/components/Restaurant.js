@@ -6,10 +6,13 @@ import { FaStar } from "react-icons/fa";
 import { HiOutlineCurrencyRupee } from "react-icons/hi2";
 import MenuCard from "./MenuCard";
 import ShimmerRes from "./ShimmerRes";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Restaurant = () => {
   const [restaurantInfo, setRestaurantInfo] = useState([]);
   const params = useParams();
+  const onlineStatus = useOnlineStatus();
+
   console.log(params);
 
   const fetchData = async () => {
@@ -25,6 +28,10 @@ const Restaurant = () => {
 
   if (restaurantInfo.length == 0) {
     return <ShimmerRes />;
+  }
+
+  if (!onlineStatus) {
+    return <h1>No Internet Connection</h1>;
   }
 
   const {

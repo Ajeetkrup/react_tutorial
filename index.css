@@ -30,6 +30,7 @@ a {
 .nav-items > ul {
   display: flex;
   flex-direction: row;
+  list-style-type: none;
 }
 
 .nav-item {
@@ -190,7 +191,7 @@ h4 {
 }
 
 .veg-icon {
-  color: green;
+  color: rgb(42, 234, 42);
 }
 
 .non-veg-icon {
