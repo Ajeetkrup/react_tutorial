@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import image from "../../assets/images/logo.jpg";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { FaDotCircle } from "react-icons/fa";
+import UserContext from "../utils/UserContext";
 
 export const Header = () => {
   const [btnName, setBtnName] = useState("Login");
   const onlineStatus = useOnlineStatus();
+
+  const { loggedInUser } = useContext(UserContext);
 
   return (
     <div className="header">
@@ -37,7 +40,7 @@ export const Header = () => {
             <Link to="/contact">Contact Us</Link>
           </li>
           <li className="nav-item">Cart</li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <button
               className="auth"
               onClick={() => {
@@ -48,7 +51,8 @@ export const Header = () => {
             >
               {btnName}
             </button>
-          </li>
+          </li> */}
+          <li className="user-name-header">User : {loggedInUser}</li>
         </ul>
       </div>
     </div>
