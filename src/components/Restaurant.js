@@ -10,6 +10,7 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Restaurant = () => {
   const [restaurantInfo, setRestaurantInfo] = useState([]);
+  const [showInd, setShowInd] = useState();
   const params = useParams();
   const onlineStatus = useOnlineStatus();
 
@@ -85,7 +86,11 @@ const Restaurant = () => {
               ind >= 1 &&
               card?.card?.card?.itemCards?.length > 0 && (
                 <li key={ind}>
-                  <MenuCard menu={card?.card?.card} />
+                  <MenuCard
+                    menu={card?.card?.card}
+                    showItems={ind == showInd && true}
+                    setShowItems={() => setShowInd(ind)}
+                  />
                 </li>
               )
             );
