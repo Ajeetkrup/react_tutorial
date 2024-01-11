@@ -4,7 +4,7 @@
 
 ## Features -
 
-1. List of all restaurants available in Jamshedpur, India.
+1. List of all restaurants available in Jamshedpur, Jharkhand, India.
 2. Search functionality - search your favorite restaurants
 3. Sort top rated restaurants
 4. Dynamic restaurant pages
@@ -15,7 +15,7 @@
 2. Router - react-router-dom
 3. Icons - react-icons
 4. API - Swiggy's API
-5. React context, react-redux, redux-toolkit
+5. Store - React context, react-redux, redux-toolkit
 
 ### Install all depedencies - npm install
 
