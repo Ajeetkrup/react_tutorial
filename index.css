@@ -269,3 +269,28 @@ h4 {
   font-weight: 600;
   padding: 0 4px;
 }
+
+.cart-title {
+  font-weight: 600;
+  text-align: center;
+  margin: 2rem;
+}
+
+.cart-items {
+  width: 50%;
+  margin: auto;
+}
+
+.clear-card-btn {
+  text-align: center;
+}
+
+.clear-card-btn > button {
+  cursor: pointer;
+  padding: 0.3rem;
+  font-weight: 400;
+  color: #201d1d;
+  background-color: #c7f2ed;
+  border: 2px solid transparent;
+  border-radius: 4px;
+}

@@ -3,10 +3,17 @@ import { FaPlus } from "react-icons/fa";
 import { MENU_LOGO_URL } from "../utils/constants";
 import { LuIndianRupee } from "react-icons/lu";
 import { IconContext } from "react-icons";
+import { addItem } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
 
 const MenuItem = ({ info }) => {
   console.log("menuitem -", info);
   const { category, imageId, itemAttribute, name, price } = info;
+
+  const dispatch = useDispatch();
+  const handleAction = () => {
+    dispatch(addItem(info));
+  };
 
   return (
     <div className="menu">
@@ -32,7 +39,7 @@ const MenuItem = ({ info }) => {
       <div className="menu-img">
         {imageId && <img src={MENU_LOGO_URL + imageId} />}
         {!imageId && <img altName="Menu Image" />}
-        <button>
+        <button onClick={handleAction}>
           <span className="btn-text">Add</span>
           <span className="btn-plus">
             <FaPlus />
