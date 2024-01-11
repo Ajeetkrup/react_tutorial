@@ -15,6 +15,7 @@
 2. Router - react-router-dom
 3. Icons - react-icons
 4. API - Swiggy's API
+5. React context, react-redux, redux-toolkit
 
 ### Install all depedencies - npm install
 
