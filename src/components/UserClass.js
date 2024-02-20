@@ -4,7 +4,6 @@ class UserClass extends React.Component {
   //access props
   constructor(props) {
     super(props);
-    console.log(props);
     //create state variables
     this.state = {
       cnt: 0,

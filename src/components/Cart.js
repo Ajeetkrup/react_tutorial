@@ -13,8 +13,15 @@ const Cart = () => {
     <div>
       <div className="cart-title">Cart</div>
       <div className="cart-items">
-        {cartItems?.map((item) => {
-          return <MenuItem key={item?.id} info={item} />;
+        {cartItems?.map((item, index) => {
+          return (
+            <MenuItem
+              key={item?.id + index}
+              info={item}
+              isCart={true}
+              cartInd={index}
+            />
+          );
         })}
       </div>
       <div className="clear-card-btn">

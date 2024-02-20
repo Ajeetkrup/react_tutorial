@@ -8,7 +8,6 @@ const MenuCard = ({ menu, showItems, setShowItems }) => {
     setShowItems();
   };
 
-  console.log(menu);
   return (
     <div className="menu-card-info">
       <div className="title" onClick={handleClick}>
@@ -22,7 +21,9 @@ const MenuCard = ({ menu, showItems, setShowItems }) => {
         {menu?.itemCards?.map((card, ind) => {
           return (
             <div key={card?.card?.info?.id}>
-              {showItems && <MenuItem info={card?.card?.info} />}
+              {showItems && (
+                <MenuItem info={card?.card?.info} isCart={false} cartInd={-1} />
+              )}
             </div>
           );
         })}

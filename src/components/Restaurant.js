@@ -14,13 +14,14 @@ const Restaurant = () => {
   const params = useParams();
   const onlineStatus = useOnlineStatus();
 
-  console.log(params);
-
   const fetchData = async () => {
-    const data = await fetch(RESTAURANT_URL + params.id);
-    const json = await data.json();
-    console.log(json.data.cards);
-    setRestaurantInfo(json?.data?.cards);
+    try {
+      const data = await fetch(RESTAURANT_URL + params.id);
+      const json = await data.json();
+      setRestaurantInfo(json?.data?.cards);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {
@@ -45,8 +46,7 @@ const Restaurant = () => {
     costForTwoMessage,
     expectationNotifiers,
     sla,
-  } = restaurantInfo[0]?.card?.card?.info;
-  console.log("data -", restaurantInfo[0]?.card?.card?.info.name);
+  } = restaurantInfo[2]?.card?.card?.info;
 
   let groupedCard;
   restaurantInfo.forEach((restaurant) => {
@@ -54,8 +54,6 @@ const Restaurant = () => {
       groupedCard = restaurant.groupedCard;
     }
   });
-
-  console.log("menu -", groupedCard.cardGroupMap.REGULAR.cards);
 
   return (
     <div className="res-details">

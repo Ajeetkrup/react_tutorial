@@ -3,7 +3,6 @@ import errorSrc from "../../assets/images/error.jpg";
 
 const Error = () => {
   const err = useRouteError();
-  console.log(err);
   return (
     <div className="container">
       <img className="err-img" src={errorSrc} altname="err" />

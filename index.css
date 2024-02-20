@@ -215,7 +215,7 @@ h4 {
   border-radius: 9px;
 }
 
-.menu-img > button {
+.menu-img > .add {
   position: relative;
   color: green;
   background-color: #fff;
@@ -223,6 +223,17 @@ h4 {
   border-radius: 7px;
   padding: 5px;
   right: 67px;
+  cursor: pointer;
+}
+
+.menu-img > .remove {
+  position: relative;
+  color: green;
+  background-color: #fff;
+  border: 1px solid gray;
+  border-radius: 7px;
+  padding: 5px;
+  right: 82px;
   cursor: pointer;
 }
 

@@ -4,6 +4,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { RESTAURANTS_URL } from "../utils/constants";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -19,24 +20,22 @@ const Body = () => {
   }, []);
 
   const fetchRestaurants = async () => {
-    try{
-      const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.8045665&lng=86.2028754&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING#"
-      );
-  
+    try {
+      const data = await fetch(RESTAURANTS_URL);
+
       const json = await data.json();
-      console.log(json);
-  
+
       setListOfRestaurants(
-        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
       );
       setLOR(
-        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
       );
-    }catch(err) {
-      console.log(err)
+    } catch (err) {
+      console.log(err);
     }
-   
   };
 
   if (listOfRestaurants?.length === 0) {
@@ -61,11 +60,9 @@ const Body = () => {
           <button
             className="search-btn"
             onClick={() => {
-              console.log(searchText);
-
               const filteredRestaurants = LOR?.filter((restaurant) => {
-                return restaurant?.info?.name?
-                  .toLowerCase()
+                return restaurant?.info?.name
+                  ?.toLowerCase()
                   .includes(searchText.toLowerCase());
               });
               setListOfRestaurants(filteredRestaurants);
